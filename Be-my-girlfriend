@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Be My Girlfriend?</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      background-color: #fff0f5;
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #e91e63;
+    }
+
+    #yesBtn, #noBtn {
+      font-size: 20px;
+      padding: 15px 30px;
+      margin: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    #yesBtn {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #f44336;
+      color: white;
+    }
+
+    #message {
+      margin-top: 30px;
+      font-size: 1.5em;
+      color: #673ab7;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Will You Be My Girlfriend?</h1>
+  <button id="yesBtn">Yes</button>
+  <button id="noBtn">No</button>
+  <div id="message"></div>
+
+  <script>
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+    const message = document.getElementById("message");
+
+    let yesFontSize = 20;
+
+    noBtn.addEventListener("click", () => {
+      yesFontSize += 10;
+      yesBtn.style.fontSize = `${yesFontSize}px`;
+    });
+
+    yesBtn.addEventListener("click", () => {
+      message.style.display = "block";
+      message.innerHTML = "Now that you picked YES... brace yourself to enjoy the rest of your life with some sweet trouble!";
+      yesBtn.style.display = "none";
+      noBtn.style.display = "none";
+    });
+  </script>
+</body>
+</html>
